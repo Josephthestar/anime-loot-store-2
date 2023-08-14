@@ -1,4 +1,11 @@
 /* CSS Custom Properties */
+/* Apply to a specific element, e.g., the body */
+body {
+  border-top: 0px solid rgb(0, 0, 0); /* Adjust the color, width, and style as needed */
+  margin-top: 0; /* Remove default margin to make the line stick to the top */
+}
+/* i added s solid border line */
+
 
 :root {
   --white: #ffffff;
@@ -32,9 +39,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 2vmin;
-  height: 100vh;
-  background-image: url('https://hellosubscription.com/wp-content/uploads/2021/12/image_61a9058e3345a.png?quality=90&strip=all');
-  background-size: center;
+  height: 90vh;
+  /* background-image: url('https://hellosubscription.com/wp-content/uploads/2021/12/image_61a9058e3345a.png?quality=90&strip=all'); */
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll; /* Change to "scroll" for auto-align */
   background-position: center; /* Adjust this for positioning */

@@ -17,38 +17,47 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <Navbar expand='sm' className="bg-transparent">
-      <Container fluid>
-        <Navbar.Brand ><Nav.Link as={Link} to="/">anime-lootsnack-store</Nav.Link></Navbar.Brand>
-        <Navbar.Toggle />
-        
-        <Navbar.Collapse className="justify-content-end">
-          <Nav>
-          <Nav.Link href="https://joseph-rihan-portfolio.netlify.app/"
-           target="_blank" rel="noopener noreferrer">My Profile</Nav.Link>
-            <Nav.Link as={Link} to="/entries">
-              <i className="fas fa-shopping-cart"></i> {/* Shopping cart icon */}
-              Your Shopping Cart
-            </Nav.Link>
-            
-            &nbsp;&nbsp;
-            <Nav.Link as={Link} to="/entries/new">Add Additional Loot</Nav.Link>
-            &nbsp;&nbsp;
-            <Navbar.Text><span>Welcome, {user.name}</span></Navbar.Text>
-            &nbsp;&nbsp;
-            <Nav.Link onClick={handleLogOut}>Log Out</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-      <div className="shopping-cart">
-        <h2>Shopping Cart</h2>
-        <ul>
-          {cartItems.map((item, index) => (
-            <li key={index}>{item.name}</li>
-          ))}
-        </ul>
+    <>
+      <div className="border-top bg-dark text-white p-2" style={{ marginTop: '-19px' }}>
+        <div className="container">
+          Welcome to the Anime Loot Snack Store!
+        </div>
       </div>
-    </Navbar>
+      <Navbar expand='sm' className="bg-transparent">
+        <Container fluid>
+          <Navbar.Brand className="navbar-brand">
+            <Link to="/">anime-lootsnack-store</Link>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+
+          <Navbar.Collapse className="justify-content-end">
+            <Nav>
+              <Nav.Link href="https://joseph-rihan-portfolio.netlify.app/"
+                target="_blank" rel="noopener noreferrer">My Profile</Nav.Link>
+              <Nav.Link as={Link} to="/entries">
+                <i className="fas fa-shopping-cart"></i> {/* Shopping cart icon */}
+                Your Shopping Cart
+              </Nav.Link>
+
+              &nbsp;&nbsp;
+              <Nav.Link as={Link} to="/entries/new">Add Additional Loot</Nav.Link>
+              &nbsp;&nbsp;
+              <Navbar.Text><span>Welcome, {user.name}</span></Navbar.Text>
+              &nbsp;&nbsp;
+              <Nav.Link onClick={handleLogOut}>Log Out</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+        <div className="shopping-cart">
+          <h2>Shopping Cart</h2>
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>{item.name}</li>
+            ))}
+          </ul>
+        </div>
+      </Navbar>
+    </>
   );
 }
 
